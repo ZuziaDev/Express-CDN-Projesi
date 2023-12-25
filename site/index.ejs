@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dosya İndirme Sayfası</title>
+  <meta name="robots" content="noindex">
+                                
+                                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css">
+                                <title>Zuzia.dev - {request.args.get('id')}</title>
+                                
+                                <meta name="twitter:card" content="summary_large_image">
+                                <meta name="twitter:image" content="https://cdn.zuzia.dev/media/Zuzia.gif">
+                                <meta name="twitter:image:src" content="https://cdn.zuzia.dev/media/Zuzia.gif">
+                                <meta name="twitter:site" content="Zuzia.Dev">
+                                
+                                <meta property="og:image" content="https://cdn.zuzia.dev/media/Zuzia.gif">
+                                
+                                <meta property="og:url" content="https://zuzia.dev/" />
+                                <link rel="icon" type="image/jpeg" href="{request.url_root}{url_for('static', filename='image/'+request.args.get("id"))}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2f2f2f;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #fff;
+      margin-top: 0;
+    }
+
+    .file-button {
+      background-color: #AF62FE;
+      color: #fff;
+      border: none;
+      padding: 10px 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      width: 100px;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    .file-button:hover {
+      background-color: #CC9BFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dosya Adı: <%= file %> (<%= mb %>)mb</h1>
+    <p>Aşağıdaki butondan dosyayı indirebilirsiniz:</p>
+
+<center><a href="/file?name=<%= dosya %>" download="<%= file %>" class="file-button">Dosyayı İndir</a></center>
+
+  </div>
+</body>
+</html>
